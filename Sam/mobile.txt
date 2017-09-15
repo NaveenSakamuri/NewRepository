@@ -1,0 +1,64 @@
+package com;
+
+public class Mobile {
+	private int mobileId;
+	private String mobileBrandName;
+	private String mobileType;
+	private double mobileCost;
+	private int warrantyPeriod;
+
+	public Mobile(int mobileId, String mobileBrandName, String mobileType, double mobileCost, int warrantyPeriod) {
+		this.mobileId = mobileId;
+		this.mobileBrandName = mobileBrandName;
+		this.mobileType = mobileType;
+		this.mobileCost = mobileCost;
+		this.warrantyPeriod = warrantyPeriod;
+	}
+
+	public int getMobileId() {
+		return mobileId;
+	}
+
+	public void setMobileId(int mobileId) {
+		this.mobileId = mobileId;
+	}
+
+	public String getMobileBrandName() {
+		return mobileBrandName;
+	}
+
+	public void setMobileBrandName(String mobileBrandName) {
+		this.mobileBrandName = mobileBrandName;
+	}
+
+	public String getMobileType() {
+		return mobileType;
+	}
+
+	public void setMobileType(String mobileType) {
+		this.mobileType = mobileType;
+	}
+
+	public double getMobileCost() {
+		return mobileCost;
+	}
+
+	public void setMobileCost(double mobileCost) {
+		this.mobileCost = mobileCost;
+	}
+
+	public int getWarrantyPeriod() {
+		return warrantyPeriod;
+	}
+
+	public void setWarrantyPeriod(int warrantyPeriod) {
+		this.warrantyPeriod = warrantyPeriod;
+	}
+
+	public String toString() {
+		return this.mobileBrandName + ", " + this.mobileId + ", " + this.mobileCost + ", " + this.mobileType + ", "
+				+ this.warrantyPeriod;
+
+	}
+
+}

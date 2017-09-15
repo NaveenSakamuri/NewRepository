@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package com;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TestMobile {
+
+	public static void main(String[] args) {
+		Mobile m1 = new Mobile(101, "Samsung", "Single", 2000, 3);
+		Mobile m2 = new Mobile(102, "Samsung", "dual", 20008, 4);
+		Mobile m3 = new Mobile(103, "Nokia", "Single", 20000, 5);
+		Mobile m4 = new Mobile(104, "Microsoft", "dual", 20006, 3);
+
+		ArrayList<Mobile> list = new ArrayList<Mobile>();
+		list.add(m1);
+		list.add(m2);
+		list.add(m3);
+		list.add(m4);
+
+		System.out.println(Process.isDoubleSimMobile(m2));
+		List<Mobile> listByBrandName = Process.retrieveByBrandName(list, "samsung");
+		for (Mobile mobile : listByBrandName) {
+			System.out.println(mobile.getMobileBrandName());
+		}
+
+		System.out.println(Process.findCostliestMobile(list));
+
+		System.out.println(Process.searchByMobileId(list, 104) == null ? "Mobile Not Found":Process.searchByMobileId(list, 104));
+
+		System.out.println(Process.countOfMobileType(list, "Single"));
+	}
+
+}

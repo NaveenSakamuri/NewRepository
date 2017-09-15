@@ -1,0 +1,55 @@
+package com;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Process {
+	public static boolean isDoubleSimMobile(Mobile mobile) {
+		if (mobile.getMobileType().equalsIgnoreCase("dual")) {
+			return true;
+		}
+		return false;
+	}
+
+	public static List<Mobile> retrieveByBrandName(ArrayList<Mobile> list, String brnadName) {
+		List<Mobile> temp = new ArrayList<Mobile>();
+		for (Mobile mobile : list) {
+			if (mobile.getMobileBrandName().equalsIgnoreCase(brnadName)) {
+				temp.add(mobile);
+			}
+		}
+
+		return temp;
+	}
+
+	public static Mobile findCostliestMobile(ArrayList<Mobile> list) {
+		Mobile costliest = list.get(0);
+		for (Mobile mobile : list) {
+			if (mobile.getMobileCost() > costliest.getMobileCost()) {
+				costliest = mobile;
+			}
+		}
+
+		return costliest;
+	}
+
+	public static Mobile searchByMobileId(ArrayList<Mobile> list, int id) {
+		for (Mobile mobile : list) {
+			if (mobile.getMobileId() == id) {
+				return mobile;
+			}
+		}
+		return null;
+	}
+
+	public static int countOfMobileType(ArrayList<Mobile> list, String mobileType) {
+		int count = 0;
+		for (Mobile mobile : list) {
+			if (mobile.getMobileType().equalsIgnoreCase(mobileType)) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+}
